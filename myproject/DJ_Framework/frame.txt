@@ -78,11 +78,44 @@ asgi.py(ASGI works similar to WSGI)
  step 2 :   cd schedule
  step 3 :   django-admin startapp month
 
+#--Xammp----
+
+Step: 1 – Xammp server create database
+Step 2 – In the environment where you have install Django
+(in the same environment pip install mysqlclient ==2.2.0)
+Step 3 – create a project
+Step 4 – settings.py
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.mysql',
+       'NAME': 'bookmanagement',
+       'PORT': '3306',
+       'USER': 'root',
+       'PASSWORD':'',
+       'HOST':'localhost'
+   }
+}
+Write connectivity code
+Step5 : py manage.py migrate
+Step6: Install app : ‘author’
+Step7 : Django-admin startapp author
+Step8 : models.py structure
+Step 9: makemigrations and migrate
+
+https://docs.djangoproject.com/en/5.0/topics/db/models/#fields
+
+https://docs.djangoproject.com/en/5.0/topics/db/models/#field-options
 
 
+(urls) E:\DjangoCh\bookstore>py manage.py shell
+Python 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from author.models import Author
+>>> Author.objects.all()
+<QuerySet []>
 
-
-
+https://docs.djangoproject.com/en/5.0/ref/models/querysets/
 
 
 
