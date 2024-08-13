@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+{% block page_title %} Index {% endblock %}
+
+{% block content %}
+<h1>Welcome To prasanth InfoTech </h1>
+    <hr>
+    
+    <ul>
+
+        {% for mon in month %}
+        <li><h3><a href="{{mon}}"> {{mon}} </a></h3></li>
+        {% endfor %}
+
+    </ul>
+    <hr>
+    <ol>
+
+        {% for mon in month %}
+        <li><h3><a href='{% url "month-details"  mon %}'> {{mon}} </a></h3></li>
+        {% endfor %}
+
+    </ol>
+    
+    <hr>
+    
+
+    {% endblock %}
+
