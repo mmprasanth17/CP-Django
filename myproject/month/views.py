@@ -44,3 +44,5 @@ def monthly_details(request, month):
         return HttpResponse(month_text)
     except:
         return HttpResponseNotFound('This is not mentioned')
+    
+
