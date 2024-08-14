@@ -32,3 +32,32 @@ def author_details(request, author):
         return HttpResponse(responce_data)
     except:
         return HttpResponseNotFound('<h1>This is not mentioned<h1>')
+
+# with slug method 
+
+def author_slug(request, slug):
+    try:
+        auth_text = author.objects.get(slug=slug)
+        responce_data =render(request,'author_details/auth.html',
+        {
+            "text" : auth_text
+
+        })
+
+        return HttpResponse(responce_data)
+    except:
+        return HttpResponseNotFound('<h1>This is not mentioned<h1>')
+    
+
+def author_info(request, id):
+    try:
+        # auth_value = author.objects.get(id=author)
+        auth_value=author.objects.get(id=id)
+        print(F'-------------{author}')
+        
+        response_data = render(request, 'author_details/auth.html', {
+            "text": auth_value
+        })
+        return HttpResponse(response_data)
+    except : 
+        return HttpResponseNotFound('<h1>This is not mentioned</h1>') 
