@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block page_title %} Author Details  {% endblock %}
 
-{% block style %} {% endblock %}
+{% block style %}
+{% endblock %}
 {% block content %}
 <ul>
     {% for auth in author %}
-        <li><h3><a href="{% url 'author-slug' auth.slug %}">{{auth.first_name}}</h3></a></li>
+
+        <!-- <li><h3><a href="{% url 'author-slug' auth.slug %}">{{auth.first_name}}</h3></a></li> -->
+        <li><h3><a href="{% url 'author_info' auth.id %}">{{auth.first_name}}</h3></a></li>
     {% endfor %} 
+    <p>Average Rating: {{ avg_rating }}</p>
+    <p>Total Authors: {{ tol_author }}</p>
+    
 </ul>
 {% endblock %}
