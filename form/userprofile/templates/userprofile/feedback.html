@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="{% url 'feedbackform' %}" method="POST">
+            {% csrf_token %}
+            {% if haserror %}
+<p>You have entered empty value</p>
+            {% endif %}
+            <label for='username'>Enter Name</label>
+            <input id='username' name='username' type='text'>
+            <button type="submit">Send</button>
+        </form>
+    </body>
+</html>

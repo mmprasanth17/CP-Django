@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+    {% include 'app/header.html' %}
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+    <div class="intro">
+        <div class="intro-text">
+            <h1>Welcome to My Website</h1>
+            <p>This is Prasanth M M,I am a software developer at Changepond Technologies, where I focus on crafting innovative solutions and driving technological advancements. My expertise lies in Python full-stack development, allowing me to seamlessly integrate both backend and frontend technologies. I am dedicated to designing and building scalable applications that meet the highest standards of quality and performance. Collaborating with a talented team, I tackle complex challenges and deliver user-centric solutions. My work involves staying updated with the latest industry trends and continuously enhancing my skills to stay ahead in the fast-evolving tech landscape. I am passionate about coding and committed to delivering reliable and efficient software that drives success.</p>
+        </div>
+        <img src="{% static 'images/prasanth.png' %}" alt="Profile Image">
+
+    </div>
+
+
+    <section id="posts" class="posts">
+        <h2>Posts</h2>
+        <div >
+            <article>
+                <a href="{% url 'card_details' post_id=1 %}">
+                    <img src="{% static 'images/gold-earlings.jpg' %}" alt="Post 1">
+                    <h3>Post 1</h3>
+                </a>
+                <p>click for detail</p>
+            </article>
+            <article>
+                <a href="{% url 'card_details' post_id=2 %}">
+                    <img src="{% static 'images/gold-home.jpg' %}" alt="Post 2">
+                    <h3>Post 2</h3>
+                </a>
+                <p>Click or detail</p>
+            </article>
+            <article>
+                <a href="{% url 'card_details' post_id=3 %}">
+                    <img src="{% static 'images/gold-necklace.jpg' %}" alt="Post 3">
+                    <h3>Post 3</h3>
+                </a>
+                <p>click for detail</p>
+            </article>
+            <a href="{%url 'all_post' %}"><button>Show more</button>
+            </a>
+        </div>
+    </section>
+    
+    <section id="about-us">
+        <h2>About Me</h2>
+        <p style="background-color: cadetblue;">At Changepond Technologies, we are committed to delivering cutting-edge software solutions tailored to meet the unique needs of our clients. Our team of experts specializes in creating robust and scalable applications across various technologies. We pride ourselves on our client-centric approach, ensuring that every project is executed with precision and care. With a focus on innovation and excellence, we strive to stay ahead of industry trends and continuously improve our offerings. Our goal is to provide high-quality, reliable software solutions that drive success and exceed expectations. Passionate about technology, we are dedicated to making a positive impact through our expertise and commitment to excellence.</p>
+    </section>
+
+    {% include 'app/footer.html' %}
+{% endblock %}

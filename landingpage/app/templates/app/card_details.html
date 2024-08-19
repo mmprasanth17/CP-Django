@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/base.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Post Details</h1>
+    </header>
+    
+    <section id="post-details">
+        <img src="{% static post_image %}"  style="max-width: 20%;">
+        <h2>Post {{ post_id }}</h2>
+        <p>Details of post {{ post_id }}</p>
+        <p>{{desc}}</p>
+    </section>
+</body>
+</html>
