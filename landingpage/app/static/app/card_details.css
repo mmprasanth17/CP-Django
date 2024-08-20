@@ -1,0 +1,8 @@
+.detalis{
+    max-width: 800px;
+    margin: 0 auto;
+    border: 6px solid;
+    border-radius: 10px;
+    background-color: beige;
+    text-align: center
+}

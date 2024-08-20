@@ -1,22 +1,31 @@
-<!DOCTYPE html>
 {%load static %}
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Post Details</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'app/css/base.css' %}">
+    
+    {% block css_file%} <link rel="stylesheet" href="{% static 'app/card_details.css' %}">{% endblock %}
+   
 </head>
-<body>
+<body class="detalis">
     <header>
-        <h1>Post Details</h1>
+        <h1>Product Details</h1>
     </header>
     
     <section id="post-details">
-        <img src="{% static post_image %}"  style="max-width: 20%;">
+        <img src="{{ desc.image }}"  style="max-width: 20%;">
         <h2>Post {{ post_id }}</h2>
         <p>Details of post {{ post_id }}</p>
         <p>{{desc}}</p>
+        <p>Cost :{{desc.cost}}</p>
+        <p>Rating:{{desc.rating}}</p>
+        <p>Date:{{desc.date}}</p>
+        <p>Time:{{desc.time}}</p>
+        <p>Current Time:{{desc.current_time}}</p>
+        <p>Description:{{desc.description}}</p>
+        
     </section>
 </body>
 </html>

@@ -1,0 +1,25 @@
+.form-container {
+    border: 4px solid;
+    width: 325px;
+    background-color: bisque;
+    text-align: center;
+    margin: 0 auto; /* Centers the form on the page */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}

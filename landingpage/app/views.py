@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import user
 images = {
         1: 'images/gold-earlings.jpg',
         2: 'images/gold-home.jpg',
@@ -17,19 +17,23 @@ describtion={
         6: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
 }
 
+card_db = user.objects.all()
 def landing_page(request):
-    return render(request, 'app/landing.html')
+    all_post=user.objects.all().order_by('-id')[:3]
+    
+    all_post = all_post[::-1]
+    
+    
+    return render(request, 'app/landing.html',{'Postaa':all_post})
 
-def card_details(request, post_id):
+def card_details(request,post_id):
    
     post_image = images[post_id]
-    description_detail=describtion[post_id]
-    return render(request, 'app/card_details.html', {
-        'post_id': post_id,
-        'post_image': post_image,
-        'image':post_image,
-        'desc':description_detail
+    description_detail=user.objects.all().get(id=post_id)
+    return render(request, 'app/card_details.html', {'desc':description_detail
         })
 
 def all_post(request):
-    return render(request,'app/all_post.html')
+    all_post=user.objects.all()
+    return render(request, 'app/all_post.html', {'Postaa':all_post
+        })

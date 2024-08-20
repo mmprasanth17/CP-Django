@@ -1,0 +1,53 @@
+<!-- {% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
+<section id="posts" class="posts">
+    <h2>Posts</h2>
+    <div >
+        <article>
+            <a href="{% url 'card_details' post_id=1 %}">
+                <img src="{% static 'images/gold-earlings.jpg' %}" alt="Post 1">
+                <h3>Post 1</h3>
+            </a>
+            <p>click for detail</p>
+        </article>
+        <article>
+            <a href="{% url 'card_details' post_id=2 %}">
+                <img src="{% static 'images/gold-home.jpg' %}" alt="Post 2">
+                <h3>Post 2</h3>
+            </a>
+            <p>Click or detail</p>
+        </article>
+        <article>
+            <a href="{% url 'card_details' post_id=3 %}">
+                <img src="{% static 'images/gold-necklace.jpg' %}" alt="Post 3">
+                <h3>Post 3</h3>
+            </a>
+            <p>click for detail</p>
+        </article>
+        <article>
+            <a href="{% url 'card_details' post_id=4 %}">
+                <img src="{% static 'images/gold-braclet.jpg' %}" alt="Post 3">
+                <h3>Post 4</h3>
+            </a>
+            <p>click for detail</p>
+        </article>
+        <article>
+            <a href="{% url 'card_details' post_id=5 %}">
+                <img src="{% static 'images/gold-ring.jpg' %}" alt="Post 3">
+                <h3>Post 5</h3>
+            </a>
+            <p>click for detail</p>
+        </article>
+        <article>
+            <a href="{% url 'card_details' post_id=6 %}">
+                <img src="{% static 'images/silver-earlings.jpg' %}" alt="Post 3">
+                <h3>Post 6</h3>
+            </a>
+            <p>click for detail</p>
+        </article>
+    </div>
+</section>
+{% endblock %} -->
