@@ -3,8 +3,9 @@ from .import views
 urlpatterns = [
     # path('form/', views.index, name='form'),
     # path('index/',views.feedbackform,name='feedbackform'),
-    path('', views.feedbackform, name='feedbackform'),
-    path('thankyou/',views.thanku,name = 'thankyou'),
+    path('form/', views.feedbackform.as_view(), name='feedbackform'),
+    path('thankyou/',views.ThankyouView.as_view(),name = 'thankyou'),
+    path('list/',views.feedbacklistView.as_view(),name = 'list'),
    
     
 

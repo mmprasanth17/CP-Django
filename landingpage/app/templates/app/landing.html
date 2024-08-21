@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {%load static%}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 {% block content %}
     {% include 'app/header.html' %}
 
@@ -23,14 +26,7 @@
         <p style="background-color: cadetblue;">At Changepond Technologies, we are committed to delivering cutting-edge software solutions tailored to meet the unique needs of our clients. Our team of experts specializes in creating robust and scalable applications across various technologies. We pride ourselves on our client-centric approach, ensuring that every project is executed with precision and care. With a focus on innovation and excellence, we strive to stay ahead of industry trends and continuously improve our offerings. Our goal is to provide high-quality, reliable software solutions that drive success and exceed expectations. Passionate about technology, we are dedicated to making a positive impact through our expertise and commitment to excellence.</p>
     </section>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    
 
     {% include 'app/footer.html' %}
 {% endblock %}
