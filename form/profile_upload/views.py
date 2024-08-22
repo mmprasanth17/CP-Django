@@ -37,8 +37,15 @@ from .models import Profileimage
 #         })
 
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
+ 
 class CreateProfileView(CreateView):
     model = Profileimage
     template_name = "profile_upload/upload.html"
     success_url ='/profile/'
     fields ="__all__"
+    
+class Profileview(ListView):
+      model =Profileimage
+      template_name = "profile_upload/renderingimage.html"
+      context_object_name= "rendering"

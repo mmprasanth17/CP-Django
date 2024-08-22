@@ -7,7 +7,9 @@ from django.utils import timezone
 
 
 class user(models.Model):
-    image=models.URLField(max_length=1000,null=True)
+    # image=models.URLField(max_length=1000,null=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+
     product_name=models.CharField(max_length=50,null=True)
     description=models.CharField(max_length=400,null=True)
     cost=models.IntegerField(null=True)

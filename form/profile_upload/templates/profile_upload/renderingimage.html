@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block css_file %}<link rel="stylesheet" href="{% static 'profile_upload/rendering.css' %}">{% endblock  %}
+{% block content %}
+    <ul class="ren_img">
+        <!-- {% csrf_token %} -->
+        {% for ren in rendering %}
+        <li><img  src="{{ren.userimage.url}} " alt="">
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock  %}
+
+    

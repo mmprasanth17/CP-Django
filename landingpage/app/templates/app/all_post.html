@@ -1,26 +1,25 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'base.css' %}">
 
-<a><h2 class="element">All Product</h2></a>
-<div class="container mt-5">
-  <div class="row">
+<h2 class="element">All Products</h2>
+<div class="container">
+  <div class="card-container">
     {% for post in Postaa %}
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="{{ post.image }}" class="card-img-top" style="max-width: 100%; height: auto;" alt="{{ post.image }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.product_name }}</h5>
-          <p class="card-text">{{ post.description|truncatewords:20 }}</p>
-          <a href="{% url 'card_details' post.id %}" class="btn btn-primary">Read More</a>
-        </div>
+    <div class="card">
+      <img src="{{ post.image }}" class="card-img-top" alt="{{ post.image }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.product_name }}</h5>
+        <p class="card-description">{{ post.description|truncatewords:20 }}</p>
+        <a href="{% url 'card_details' post.id %}" class="card-link">Read More</a>
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
-{% endblock %}
 
+{% endblock %}

@@ -1,0 +1,20 @@
+/* CSS in ren.css */
+.ren_img {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styles */
+}
+
+.ren_img li {
+    margin-right: 10px; /* Space between images */
+}
+
+.ren_img img {
+    width: 150px; /* Set a specific width */
+    height: 150px; /* Set a specific height */
+    object-fit: cover; /* Maintain aspect ratio and cover the set dimensions */
+    border-radius: 10%; /* Make images circular */
+    box-shadow: 0 0 29px rgba(0, 0, 0, 0.1); /* Adjusted shadow for clarity */
+}

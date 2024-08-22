@@ -1,21 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import user
-images = {
-        1: 'images/gold-earlings.jpg',
-        2: 'images/gold-home.jpg',
-        3: 'images/gold-necklace.jpg',
-        4: 'images/gold-braclet.jpg',
-        5: 'images/gold-ring.jpg',
-        6: 'images/silver-earlings.jpg',
-    }
-describtion={
-        1: 'Gold earrings are a timeless and elegant accessory that add a touch of sophistication to any outfit. Crafted from high-quality gold, they come in various designs, from classic hoops to intricate studs. These versatile pieces are perfect for both everyday wear and special occasions. Their enduring appeal makes them a cherished addition to any jewelry collection.',
-        2: 'Gold earrings and necklaces are timeless symbols of elegance and sophistication. Gold earrings, available in styles like studs and hoops, offer versatility and a touch of luxury to any outfit. Gold necklaces, ranging from delicate chains to bold statement pieces, enhance both casual and formal looks. Together, these gold accessories create a cohesive, stylish appearance, reflecting the wearers taste and enhancing their overall ensemble. Their enduring beauty ensures they remain cherished accessories for years to come.',
-        3: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
-        4: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
-        5: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
-        6: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
-}
+from .forms import ProductForm
+
+
+# images = {
+#         1: 'images/gold-earlings.jpg',
+#         2: 'images/gold-home.jpg',
+#         3: 'images/gold-necklace.jpg',
+#         4: 'images/gold-braclet.jpg',
+#         5: 'images/gold-ring.jpg',
+#         6: 'images/silver-earlings.jpg',
+#     }
+# # describtion={
+#         1: 'Gold earrings are a timeless and elegant accessory that add a touch of sophistication to any outfit. Crafted from high-quality gold, they come in various designs, from classic hoops to intricate studs. These versatile pieces are perfect for both everyday wear and special occasions. Their enduring appeal makes them a cherished addition to any jewelry collection.',
+#         2: 'Gold earrings and necklaces are timeless symbols of elegance and sophistication. Gold earrings, available in styles like studs and hoops, offer versatility and a touch of luxury to any outfit. Gold necklaces, ranging from delicate chains to bold statement pieces, enhance both casual and formal looks. Together, these gold accessories create a cohesive, stylish appearance, reflecting the wearers taste and enhancing their overall ensemble. Their enduring beauty ensures they remain cherished accessories for years to come.',
+#         3: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
+#         4: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
+#         5: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
+#         6: 'Gold necklaces are classic pieces that exude elegance and charm. Whether in a minimalist design or adorned with gemstones, they add a sophisticated touch to any outfit. Their timeless appeal makes them a versatile accessory for both everyday wear and special occasions.',
+# }
 
 card_db = user.objects.all()
 def landing_page(request):
@@ -28,7 +31,7 @@ def landing_page(request):
 
 def card_details(request,post_id):
    
-    post_image = images[post_id]
+    # post_image = images[post_id]
     description_detail=user.objects.all().get(id=post_id)
     return render(request, 'app/card_details.html', {'desc':description_detail
         })
@@ -37,3 +40,14 @@ def all_post(request):
     all_post=user.objects.all()
     return render(request, 'app/all_post.html', {'Postaa':all_post
         })
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('all_post')
+    else:
+        form = ProductForm()
+    
+    return render(request, 'app/add_product.html', {'form': form})
