@@ -1,5 +1,6 @@
-/* Base Styles */
+Base Styles
 body {
+    background-image: url('/static/images/gold-home.jpg');
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -15,22 +16,24 @@ body {
 }
 
 /* Header */
-header {
-    background-color: #867a7a;
+.header {
+    background-color: #131212;
     padding: 5px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-align: center;
 }
 
-header nav {
+.header nav {
+    background-color: #b65353;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px; /* Add space between the links */
 }
 
-header nav a {
+.header nav a {
     color: #b32626;
     text-decoration: none;
     font-size: 18px;
@@ -38,11 +41,11 @@ header nav a {
     padding: 10px 15px; /* Add some padding around the links */
 }
 
-header nav a:hover {
+.header nav a:hover {
     color: #ffd700;
 }
 
-header a {
+.header a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
@@ -60,7 +63,7 @@ header a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
-    background-color: #007bff;
+    background-color:rgb(94, 94, 93);
     color: #fff;
     text-align: left;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
@@ -68,7 +71,7 @@ header a:hover {
 
 .intro-text {
     flex: 1;
-    padding-right: 30px;
+    padding-right: 10px;
 }
 
 .intro-text h1 {
@@ -87,10 +90,17 @@ header a:hover {
 }
 
 .intro img {
-    max-width: 178px;
+    /* max-width: 178px;
     height: auto;
     border-radius: 51px;
-    box-shadow: 0 0 29px rgba(0, 0, 0, 10);
+    box-shadow: 0 0 29px rgba(0, 0, 0, 10); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin:0 50px;
 }
 
 /* Posts Section */
