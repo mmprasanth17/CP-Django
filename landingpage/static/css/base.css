@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #a01111;
+    background-color: #584a4a;
     color: #333;
 }
 
@@ -16,46 +16,6 @@ body {
 }
 
 /* Header */
-.header {
-    background-color: #131212;
-    padding: 5px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
-}
-
-.header nav {
-    background-color: #b65353;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Add space between the links */
-}
-
-.header nav a {
-    color: #b32626;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-    padding: 10px 15px; /* Add some padding around the links */
-}
-
-.header nav a:hover {
-    color: #ffd700;
-}
-
-.header a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-header a:hover {
-    color: #ffd700;
-}
 
 /* Intro Section */
 .intro {
@@ -89,20 +49,18 @@ header a:hover {
     color: cadetblue;
 }
 
-.intro img {
-    /* max-width: 178px;
-    height: auto;
-    border-radius: 51px;
-    box-shadow: 0 0 29px rgba(0, 0, 0, 10); */
+.introimg{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding: 0 36px;
+    padding: 10px;
     perspective: 2500px;
-    margin:0 50px;
+    height: 200px;
+    border-radius: 78px;
+    right: 14px;
+    width: 15%;
 }
-
 /* Posts Section */
 #posts {
     margin: 50px 0;
@@ -336,3 +294,16 @@ footer p {
 .card a:hover {
     color: #0056b3; 
 }
+.detail{    
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(141, 141, 138);
+    text-align: center;
+    max-width: 50%;
+}
+.detail img {
+    border-radius: 50px;
+    max-width: 100%; 
+    height: auto; 
+}
+

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import user
-from .forms import ProductForm
+from .forms import AddForm
+
 
 
 # images = {
@@ -41,13 +42,13 @@ def all_post(request):
     return render(request, 'app/all_post.html', {'Postaa':all_post
         })
 
-def add_product(request):
+def add_bike(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = AddForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('all_post')
     else:
-        form = ProductForm()
+        form = AddForm(request.POST)
     
-    return render(request, 'app/add_product.html', {'form': form})
+    return render(request, 'app/add_bike.html', {'form': form})

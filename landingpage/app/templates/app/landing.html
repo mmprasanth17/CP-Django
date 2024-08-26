@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-{% comment %} <link rel="stylesheet" href="{% static 'base.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
 {% comment %} <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
 
 {% block content %}
-<header>
+{% comment %} <header>
     <nav class="header">
+        <p>MAPLA BIKES</p>
         <a href="/">Home</a>
         <a href="{% url 'all_post' %}">Posts</a>
         <a href="#about-us">About</a>
     </nav>
+</header> {% endcomment %}
+<header class="site-header">
+    <div class="site-identity">
+        <h1><a href="#">CodeWith Random</a></h1>
+    </div>
+    <nav class="site-navigation">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-
 {% comment %} <link rel="stylesheet" href="{% static 'base.css' %}"> {% endcomment %}
 
 <!-- #HOME Section -->
@@ -20,18 +33,18 @@
         <h1>Welcome to My Website</h1>
         <p>This is Prasanth M M. I am a software developer at Changepond Technologies, where I focus on crafting innovative solutions and driving technological advancements. My expertise lies in Python full-stack development, allowing me to seamlessly integrate both backend and frontend technologies. I am dedicated to designing and building scalable applications that meet the highest standards of quality and performance. Collaborating with a talented team, I tackle complex challenges and deliver user-centric solutions. My work involves staying updated with the latest industry trends and continuously enhancing my skills to stay ahead in the fast-evolving tech landscape. I am passionate about coding and committed to delivering reliable and efficient software that drives success.</p>
     </div>
-    <img src="{% static 'images/prasanth.png' %}" alt="Profile Image">
+    <img class="introimg"  src="{% static 'prasanth.png' %}" alt="Profile Image">
 </div><br>
 
 <!-- #POST Section -->
 <div id="posts">
     {% include 'app/all_post.html' %}
     <!-- <a href="{% url 'all_post' %}"><button>Show More</button></a> -->
-    <button onclick="window.location.href='{% url 'add_product' %}'">Add More</button>
+    <button onclick="window.location.href='{% url 'add_bike' %}'">Add More</button>
 </div>
 
 <!-- #ABOUT ME Section -->
-<section id="about-us">
+<section id="i">
     <h2>About</h2>
     <p>At Changepond Technologies, we are committed to delivering cutting-edge software solutions tailored to meet the unique needs of our clients. Our team of experts specializes in creating robust and scalable applications across various technologies. We pride ourselves on our client-centric approach, ensuring that every project is executed with precision and care. With a focus on innovation and excellence, we strive to stay ahead of industry trends and continuously improve our offerings. Our goal is to provide high-quality, reliable software solutions that drive success and exceed expectations. Passionate about technology, we are dedicated to making a positive impact through our expertise and commitment to excellence.</p>
 </section>

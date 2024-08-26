@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-<h2>Add a New Product</h2>
+<h2>Add a New Bike</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add Product</button>
+    <button type="submit">Add Bike</button>
 </form>
 {% endblock %}

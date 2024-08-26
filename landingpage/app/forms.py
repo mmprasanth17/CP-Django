@@ -1,7 +1,7 @@
 from django import forms
-from .models import user
+from .models import user  # Assuming 'user' is the model you are using
 
-class ProductForm(forms.ModelForm):
+class AddForm(forms.ModelForm):
     class Meta:
         model = user
-        fields = ['image', 'product_name', 'description', 'cost', 'rating']
+        fields = ['Image', 'BikeName', 'Description',]
