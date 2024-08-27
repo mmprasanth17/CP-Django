@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in post.comment_set.all %}
+            <li>{{ comment.user_name }}: {{ comment.text }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'add_form' post.id %}">Add a Comment</a>
+</body>
+</html>

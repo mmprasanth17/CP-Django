@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'landingpage.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'task',
+        'NAME': 'landing',
         'PORT': '3333',
         'USER': 'root',
         'PASSWORD':'',

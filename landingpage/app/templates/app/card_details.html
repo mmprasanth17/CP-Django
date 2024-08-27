@@ -10,8 +10,6 @@
    
 </head>
 <body class="detail">
-    <header><br>    
-    </header>
     
     <section id="post-details">
         <img src="{{ desc.Image.url }}">
@@ -22,7 +20,20 @@
         <p>Date:  {{desc.Date}}</p>
         <p>Time:  {{desc.Time}}</p>
         <p>Current Time:  {{desc.Current_time}}</p>
-
     </section>
+    <button onclick="window.location.href='{% url 'command' %}'">Add command</button><br><br>
+    {% if comments %}
+   
+        {% for com in comments %}
+           
+                <strong>{{ com.user_name }}</strong> commented:
+                <p>{{ com.text }}</p>
+            
+        {% endfor %}
+    
+    {% else %}
+    <p>No comments yet. Be the first to comment!</p>
+    {% endif %}
+
 </body>
 </html>

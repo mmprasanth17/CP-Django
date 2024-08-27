@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
 <h2>Add a New Bike</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -9,3 +11,4 @@
     <button type="submit">Add Bike</button>
 </form>
 {% endblock %}
+    

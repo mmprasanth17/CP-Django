@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{% static 'base.css' %}">
 
-    <h2 class="element">All Bikes</h2>
+    <h2 class="element">Latest Post</h2>
     <div class="container">
     <div class="card-container">
         {% for post in Postaa %}
@@ -17,7 +17,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ post.BikeName }}</h5>
         <p class="card-description">{{ post.Description|truncatewords:20 }}</p>
-        <a href="{% url 'card_details' post.id %}" class="card-link">Read More</a>
+        <a href="{% url 'card_details' post.slug %}" class="card-link">Read More</a>
     </div>
     </div>
     {% endfor %}
