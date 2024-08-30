@@ -1,16 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'landing' %}">Home</a></li>
-            <li><a href="{% url 'all_post' %}">All Posts</a></li>
-            <li><a href="{% url 'add_bike' %}">Add Bike</a></li>
-            <li><a href="{%url 'command'%}">Add comment</a></li>
-        </ul>
-    </nav>
-</header>
+{% include 'app/includes/header.html' %}
+
 
 
 <!-- #HOME Section -->
@@ -19,7 +11,7 @@
         <h1>Welcome to Myportfolio</h1>
         <p>I am Prasanth M M, a 23-year-old software developer currently working at Changepond Technologies. With expertise in Python, Django, React, Angular, MySQL, AWS Cloud, HTML, and CSS, I bring a comprehensive skill set to both front-end and back-end development. My experience encompasses creating efficient and scalable solutions, and I am passionate about delivering user-friendly applications that meet client needs and exceed expectations.</p>
     </div>
-    <img class="introimg"  src="{% static 'prasanth.png' %}" alt="Profile Image">
+    <img class="introimg"  src="{% static 'css/prasanth.png' %}" alt="Profile Image">
 </div><br>
 
 
