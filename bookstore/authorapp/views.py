@@ -4,12 +4,13 @@ from .serializers import AuthorSerializer
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.exceptions import APIException
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,parsers
  
 # Create your views here.
 class AuthorViewset(ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer 
+    parser_classes = (parsers.FormParser,parsers.MultiPartParser,parsers.FileUploadParser)
     
     def get_serializer_class(self):
         if self.action == 'list':

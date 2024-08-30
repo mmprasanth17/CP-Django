@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'authorapp',
+    'bookapp',
+    'user',
     'rest_framework',
 ]
 
@@ -138,3 +140,8 @@ SWAGGER_SETTINGS = {
         }
     },
 }
+
+import os
+
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

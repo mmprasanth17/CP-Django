@@ -24,7 +24,7 @@ class Author(models.Model):
 
 class user(models.Model):
     # image=models.URLField(max_length=1000,null=True)
-    Image = models.FileField(upload_to='images/', null=True, blank=True)
+    Image = models.FileField(upload_to='images/', null=True, blank=True)    
 
     BikeName=models.CharField(max_length=50,null=True)
     Description=models.CharField(max_length=400,null=True)
