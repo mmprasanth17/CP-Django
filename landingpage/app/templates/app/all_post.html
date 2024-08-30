@@ -4,6 +4,7 @@
 
     {% block content %}
 
+
     <link rel="stylesheet" href="{% static 'base.css' %}">
 
     <h2 class="element">Latest Post</h2>
@@ -12,7 +13,7 @@
         {% for post in Postaa %}
     <div class="card">
     {% if post.Image %}
-        <img src="{{ post.Image.url }}" class="card-img-top" alt="{{ post.Image }}">
+        <img src="{{post.Image.url }}" class="card-img-top" alt="{{ post.Image }}">
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ post.BikeName }}</h5>
