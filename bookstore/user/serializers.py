@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
     """UserSerializer to get user details using JWT authentication."""
     class Meta:
         model = User
-        fields = ["id", "first_name", "last_name", "username","email"]
+        fields = ["id", "first_name", "last_name", "username","email","password"]
  
  
 class RegisterSerializer(serializers.ModelSerializer):

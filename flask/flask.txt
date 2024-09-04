@@ -1,0 +1,12 @@
+-> Flask is a lightweight WSGI web framework (microframework)
+->small and easy-to-extend core
+-> microframework that doesn't include an object relational manager
+-> features -url routing,template enginee ,
+-> flask is based on the Werkzeg WSGI toolkit and the Jinja2 template enginee
+
+WSGI (WEB SERVER GATEWAY INTERFACE):
+specification of a common interface between webservers and web application 
+->Werkzeug
+implements requests , response objects and utility functions
+->Jinja2
+popular template engine for python.

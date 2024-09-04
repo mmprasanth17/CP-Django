@@ -55,7 +55,7 @@ class AuthorViewset(ModelViewSet):
             print(e)
             raise APIException({
                 'message':APIException.default_detail,
-                'status':APIException.status.code
+                'status':APIException.status_code
             })
 # create an author  
     def create(self,request):
@@ -73,7 +73,7 @@ class AuthorViewset(ModelViewSet):
             print(e)
             raise APIException({
                 'message':APIException.default_detail,
-                'status':APIException.status.code
+                'status':APIException.status_code
             })
         
 # get single author
@@ -94,7 +94,7 @@ class AuthorViewset(ModelViewSet):
             print(e)
             raise APIException({
                 'message':APIException.default_detail,
-                'status':APIException.status.code
+                'status':APIException.status_code
             })
 #update all fields of author
     def update(self,request):
@@ -119,11 +119,12 @@ class AuthorViewset(ModelViewSet):
             print(e)
             raise APIException({
                 'message':APIException.default_detail,
-                'status':APIException.status.code
+                'status':APIException.status_code
             })
     #update specifie
-    def partial_update(self,request):
+    def partial_update(self,request,pk):
         try:
+            id=pk
             author_objs = self.get_object()
             serializer = self.get_serializer(author_objs,data=request.data,partial=True)
             if not serializer.is_valid():
@@ -144,7 +145,7 @@ class AuthorViewset(ModelViewSet):
             print(e)
             raise APIException({
                 'message':APIException.default_detail,
-                'status':APIException.status.code
+                'status':APIException.status_code
             })
  
     def destroy(self,request,pk):
